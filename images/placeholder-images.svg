@@ -1,0 +1,48 @@
+<!-- Placeholder images - replace with your actual images -->
+<!-- These are SVG placeholders that will render until you add real images -->
+
+<!-- Logo placeholder -->
+<svg width="160" height="40" xmlns="http://www.w3.org/2000/svg" style="display:none;">
+  <rect width="160" height="40" fill="#4F46E5" rx="8"/>
+  <text x="80" y="25" font-family="Arial" font-size="16" fill="white" text-anchor="middle">SaaSPro</text>
+</svg>
+
+<!-- Create placeholder image files -->
+<svg width="1200" height="800" xmlns="http://www.w3.org/2000/svg" id="hero-mockup-placeholder">
+  <rect width="1200" height="800" fill="#f8f9fa"/>
+  <rect x="100" y="100" width="1000" height="600" fill="#ffffff" rx="12" stroke="#e5e7eb" stroke-width="2"/>
+  <rect x="150" y="150" width="900" height="80" fill="#4F46E5" rx="8"/>
+  <rect x="150" y="280" width="400" height="300" fill="#f3f4f6" rx="8"/>
+  <rect x="600" y="280" width="450" height="300" fill="#f3f4f6" rx="8"/>
+  <text x="600" y="200" font-family="Arial" font-size="24" fill="#333" text-anchor="middle">Dashboard Mockup</text>
+  <text x="350" y="450" font-family="Arial" font-size="16" fill="#666" text-anchor="middle">Analytics</text>
+  <text x="825" y="450" font-family="Arial" font-size="16" fill="#666" text-anchor="middle">Reports</text>
+</svg>
+
+<!-- Client logo placeholders -->
+<svg width="150" height="50" xmlns="http://www.w3.org/2000/svg" id="google-placeholder">
+  <rect width="150" height="50" fill="#4285F4" rx="8"/>
+  <text x="75" y="30" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Google</text>
+</svg>
+
+<svg width="150" height="50" xmlns="http://www.w3.org/2000/svg" id="microsoft-placeholder">
+  <rect width="150" height="50" fill="#00A4EF" rx="8"/>
+  <text x="75" y="30" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Microsoft</text>
+</svg>
+
+<svg width="150" height="50" xmlns="http://www.w3.org/2000/svg" id="amazon-placeholder">
+  <rect width="150" height="50" fill="#FF9900" rx="8"/>
+  <text x="75" y="30" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Amazon</text>
+</svg>
+
+<svg width="150" height="50" xmlns="http://www.w3.org/2000/svg" id="meta-placeholder">
+  <rect width="150" height="50" fill="#1877F2" rx="8"/>
+  <text x="75" y="30" font-family="Arial" font-size="14" fill="white" text-anchor="middle">Meta</text>
+</svg>
+
+<!-- Testimonial placeholder -->
+<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg" id="testimonial-placeholder">
+  <circle cx="50" cy="50" r="50" fill="#e5e7eb"/>
+  <circle cx="50" cy="40" r="20" fill="#9ca3af"/>
+  <path d="M 20 80 Q 50 65 80 80" fill="#9ca3af"/>
+</svg>

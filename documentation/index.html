@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SaaSPro | Elite V2.0 Documentation</title>
+
+    <!-- Premium Fonts -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@600;700;800&family=Public+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --p-indigo: #4F46E5;
+            --bg-off: #F8FAFC;
+        }
+
+        body {
+            font-family: 'Public Sans', sans-serif;
+            background: var(--bg-off);
+            color: #1E293B;
+            line-height: 1.7;
+        }
+
+        .doc-header {
+            background: linear-gradient(135deg, #4F46E5 0%, #7C3AED 100%);
+            color: white;
+            padding: 6rem 0;
+        }
+
+        .sidebar {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            position: sticky;
+            top: 2rem;
+            border: 1px solid #E2E8F0;
+        }
+
+        .nav-link {
+            color: #64748B;
+            font-weight: 600;
+            padding: 10px 15px;
+            border-radius: 10px;
+            transition: 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            background: #EEF2FF;
+            color: var(--p-indigo);
+        }
+
+        .content-card {
+            background: white;
+            border-radius: 24px;
+            padding: 4rem;
+            margin-bottom: 2rem;
+            border: 1px solid #E2E8F0;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+        }
+
+        h1,
+        h2,
+        h3 {
+            font-family: 'Outfit', sans-serif;
+            font-weight: 800;
+            color: #0F172A;
+        }
+
+        pre {
+            background: #0F172A;
+            color: #F1F5F9;
+            padding: 1.5rem;
+            border-radius: 12px;
+            margin: 1.5rem 0;
+            font-size: 0.9rem;
+        }
+
+        code {
+            color: #EC4899;
+        }
+
+        .badge-elite {
+            background: rgba(79, 70, 229, 0.1);
+            color: var(--p-indigo);
+            padding: 5px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 800;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="doc-header">
+        <div class="container text-center">
+            <span class="badge-elite bg-white mb-3">V2.0.0 ELITE RELEASE</span>
+            <h1 class="display-3 fw-black text-white">SaaSPro Documentation</h1>
+            <p class="lead opacity-75">The Professional Guide to Scaling Your Digital Presence</p>
+        </div>
+    </header>
+
+    <div class="container mt-n5">
+        <div class="row">
+            <div class="col-lg-3">
+                <div class="sidebar mb-5">
+                    <h5 class="fw-bold mb-3 px-3">Quick Navigation</h5>
+                    <nav class="nav flex-column gap-2">
+                        <a class="nav-link active" href="#intro">Overview</a>
+                        <a class="nav-link" href="#bento">Bento Grid Editing</a>
+                        <a class="nav-link" href="#3d">3D Mockup Control</a>
+                        <a class="nav-link" href="#animations">GSAP Engine</a>
+                        <a class="nav-link" href="#theming">Elite Theming</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div class="col-lg-9">
+                <section id="intro" class="content-card">
+                    <h2>Welcome to the Elite Version</h2>
+                    <p>SaaSPro V2.0 is a complete redesign focused on **ThemeForest Elite Standards**. It features
+                        non-standard layouts, advanced micro-interactions, and a sophisticated typographic hierarchy.
+                    </p>
+                    <div class="row mt-4">
+                        <div class="col-md-6 mb-3">
+                            <div class="p-3 bg-light rounded-3 border">
+                                <i class="fas fa-cubes text-indigo mb-2 d-block"></i>
+                                <strong>Bento Architecture</strong>
+                                <p class="small text-muted m-0">Modular grid for complex features.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="p-3 bg-light rounded-3 border">
+                                <i class="fas fa-magic text-indigo mb-2 d-block"></i>
+                                <strong>Cinematic Motion</strong>
+                                <p class="small text-muted m-0">GSAP & ScrollTrigger integration.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section id="bento" class="content-card">
+                    <h2>Bento Grid Customization</h2>
+                    <p>The features section uses a grid divided into 12 columns. You can change item spans using
+                        Bootstrap classes inside `style.css` custom classes:</p>
+                    <pre>
+&lt;div class="bento-item large"&gt; &lt;!-- Spans 8 cols --&gt;
+&lt;div class="bento-item small"&gt; &lt;!-- Spans 4 cols --&gt;
+&lt;div class="bento-item full"&gt;  &lt;!-- Spans 12 cols --&gt;</pre>
+                </section>
+
+                <section id="3d" class="content-card">
+                    <h2>3D Hero Mockup</h2>
+                    <p>The hero image automatically follows the mouse cursor with a 3D tilt effect. To adjust the
+                        sensitivity, open `js/main.js` and edit the divisor:</p>
+                    <pre>
+const xAxis = (window.innerWidth / 2 - e.pageX) / 50; // Change 50 to higher for LESS movement</pre>
+                </section>
+
+                <section id="theming" class="content-card">
+                    <h2>Elite Theming System</h2>
+                    <p>All colors are controlled via CSS Variables. To change the brand identity, modify these core
+                        tokens in `style.css`:</p>
+                    <pre>
+:root {
+    --p-indigo: #4F46E5; /* Main Brand */
+    --p-violet: #7C3AED; /* Secondary */
+    --p-teal:   #06B6D4; /* Accent */
+}</pre>
+                </section>
+            </div>
+        </div>
+    </div>
+
+    <footer class="py-5 text-center text-muted">
+        <p>&copy; 2026 SaaSPro Elite. Built for Approval.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>

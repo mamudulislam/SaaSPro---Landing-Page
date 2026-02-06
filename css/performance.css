@@ -1,0 +1,62 @@
+/* Performance Optimizations */
+img {
+    max-width: 100%;
+    height: auto;
+    loading: lazy; /* Native lazy loading */
+}
+
+/* WebP support with fallback */
+picture {
+    display: contents;
+}
+
+/* Critical CSS above the fold */
+.critical-css {
+    /* Hero section critical styles inline */
+}
+
+/* Font loading optimization */
+@font-face {
+    font-family: 'Inter';
+    font-display: swap; /* Prevents invisible text */
+    src: url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
+}
+
+@font-face {
+    font-family: 'Poppins';
+    font-display: swap;
+    src: url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&display=swap');
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .navbar, .footer, .cta-section {
+        display: none;
+    }
+    
+    body {
+        font-size: 12pt;
+        line-height: 1.4;
+    }
+    
+    .hero-section {
+        background: white !important;
+        color: black !important;
+    }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero-mockup img {
+        image-rendering: -webkit-optimize-contrast;
+    }
+}
