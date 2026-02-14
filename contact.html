@@ -10,18 +10,53 @@
 </head>
 
 <body class="bg-mesh">
+    <!-- Agency Preloader -->
+    <div class="agency-preloader">
+        <div class="loader-content">
+            <span class="loader-text">LOADING</span>
+            <span class="loader-percent">0%</span>
+        </div>
+    </div>
+
     <!-- Custom Interaction -->
     <div class="custom-cursor"></div>
     <div class="cursor-follower"></div>
 
     <!-- Uncommon Floating Capsule Nav -->
-    <nav class="nav-agency">
+    <nav class="nav-agency" id="mainNav">
         <a href="index.html" class="d-flex align-items-center text-decoration-none">
             <div class="status-orb"></div>
             <span class="fw-black fs-4 text-white">SaaSPro.</span>
         </a>
-        <a href="index.html" class="btn-agency py-2 px-4 fs-6">Back Home</a>
+
+        <!-- Desktop Links -->
+        <div class="nav-links-agency">
+            <a href="index.html#work">Work</a>
+            <a href="index.html#services">Services</a>
+            <a href="index.html#process">Process</a>
+            <a href="index.html#pricing">Tier</a>
+        </div>
+
+        <div class="d-flex align-items-center gap-3">
+            <a href="index.html" class="btn-agency py-2 px-4 fs-6">Back Home</a>
+            <!-- Mobile Toggle -->
+            <button class="mobile-toggle d-lg-none text-white bg-transparent border-0 fs-2">
+                <i class="fas fa-bars-staggered"></i>
+            </button>
+        </div>
     </nav>
+
+    <!-- Mobile Menu Overlay -->
+    <div class="mobile-overlay">
+        <button class="mobile-close"><i class="fas fa-times"></i></button>
+        <div class="mobile-links-container">
+            <a href="index.html#work" class="mobile-link">Work</a>
+            <a href="index.html#services" class="mobile-link">Services</a>
+            <a href="index.html#process" class="mobile-link">Process</a>
+            <a href="index.html#pricing" class="mobile-link">Tier</a>
+            <a href="contact.html" class="mobile-link text-accent">Start Project</a>
+        </div>
+    </div>
 
     <!-- Agency Contact Section -->
     <section class="hero-agency px-5">
@@ -86,8 +121,10 @@
         © 2026 SAASPRO AGENCY. ALL RIGHTS RESERVED.
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://unpkg.com/lenis@1.0.36/dist/lenis.min.js"></script>
     <script src="js/main.js"></script>
 </body>
 

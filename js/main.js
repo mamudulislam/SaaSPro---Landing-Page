@@ -32,8 +32,9 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. Custom Cursor (Logic continues...)
     const cursor = document.querySelector('.custom-cursor');
     const follower = document.querySelector('.cursor-follower');
+    const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
 
-    if (cursor && follower) {
+    if (cursor && follower && !isTouchDevice) {
         document.addEventListener('mousemove', (e) => {
             gsap.to(cursor, {
                 x: e.clientX - 6,
@@ -101,42 +102,44 @@ document.addEventListener('DOMContentLoaded', () => {
         gsap.to(marquee, {
             xPercent: -50,
             repeat: -1,
-            duration: 30,
+            duration: 40,
             ease: 'none'
         });
     }
 
     // Project Card Perspective (Softvence Style)
     const cards = document.querySelectorAll('.project-card');
-    cards.forEach(card => {
-        card.addEventListener('mousemove', (e) => {
-            const rect = card.getBoundingClientRect();
-            const x = e.clientX - rect.left;
-            const y = e.clientY - rect.top;
-            const centerX = rect.width / 2;
-            const centerY = rect.height / 2;
-            const rotateX = (centerY - y) / 50;
-            const rotateY = (x - centerX) / 50;
+    if (!isTouchDevice) {
+        cards.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (centerY - y) / 50;
+                const rotateY = (x - centerX) / 50;
 
-            gsap.to(card.querySelector('.project-img'), {
-                rotateX: rotateX,
-                rotateY: rotateY,
-                scale: 1.1,
-                duration: 0.5,
-                ease: 'power2.out'
+                gsap.to(card.querySelector('.project-img'), {
+                    rotateX: rotateX,
+                    rotateY: rotateY,
+                    scale: 1.1,
+                    duration: 0.5,
+                    ease: 'power2.out'
+                });
+            });
+
+            card.addEventListener('mouseleave', () => {
+                gsap.to(card.querySelector('.project-img'), {
+                    rotateX: 0,
+                    rotateY: 0,
+                    scale: 1,
+                    duration: 1,
+                    ease: 'elastic.out(1, 0.3)'
+                });
             });
         });
-
-        card.addEventListener('mouseleave', () => {
-            gsap.to(card.querySelector('.project-img'), {
-                rotateX: 0,
-                rotateY: 0,
-                scale: 1,
-                duration: 1,
-                ease: 'elastic.out(1, 0.3)'
-            });
-        });
-    });
+    }
 
     // 4. Parallax Text (Softvence Inspired)
     const agencyTitle = document.querySelector('.agency-title');

@@ -66,7 +66,7 @@ h4 {
 }
 
 .agency-title {
-    font-size: clamp(3rem, 10vw, 8rem);
+    font-size: clamp(2.5rem, 10vw, 8rem);
     line-height: 0.9;
     font-weight: 900;
 }
@@ -79,29 +79,24 @@ h4 {
 /* Navigation - Uncommon Floating Capsule */
 .nav-agency {
     position: fixed;
-    top: 2rem;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 90%;
-    max-width: 1000px;
-    min-width: 600px;
-    background: rgba(7, 7, 7, 0.6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    max-width: none;
+    background: rgba(7, 7, 7, 0.8);
     backdrop-filter: blur(25px) saturate(180%);
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 100px;
-    padding: 0.8rem 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    padding: 1.2rem 5%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     z-index: 2000;
     transition: all 0.6s cubic-bezier(0.19, 1, 0.22, 1);
-    box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.5);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .nav-agency.scrolled {
-    top: 1rem;
-    min-width: 400px;
-    padding: 0.5rem 1rem;
+    padding: 0.8rem 5%;
     background: var(--brand-accent);
     border-color: var(--brand-accent);
 }
@@ -296,7 +291,8 @@ h4 {
     border-radius: var(--radius-huge);
     overflow: hidden;
     margin-bottom: 5rem;
-    height: 600px;
+    min-height: 500px;
+    height: 70vh;
     background: #111;
 }
 
@@ -417,12 +413,14 @@ h4 {
 
 /* Giant Marquee */
 .agency-marquee {
-    font-size: 10rem;
+    font-size: clamp(4rem, 15vw, 10rem);
     font-weight: 900;
     white-space: nowrap;
     color: transparent;
     -webkit-text-stroke: 1px rgba(255, 255, 255, 0.05);
-    padding: 100px 0;
+    padding: 80px 0;
+    overflow: hidden;
+    user-select: none;
 }
 
 .marquee-accent {
@@ -463,16 +461,22 @@ h4 {
 }
 
 /* Mobile & Responsive */
+@media (max-width: 1200px) {
+    .agency-title {
+        font-size: clamp(2.5rem, 8vw, 6rem);
+    }
+}
+
 @media (max-width: 991px) {
 
     /* Auto Width for Nav */
     .nav-agency,
     .nav-agency.scrolled {
-        width: 90%;
-        min-width: auto;
-        left: 5%;
+        width: 92%;
+        top: 1rem;
+        left: 4%;
         transform: none;
-        padding: 1rem;
+        padding: 0.8rem 1.2rem;
     }
 
     .nav-links-agency {
@@ -480,22 +484,26 @@ h4 {
     }
 
     /* Typography Scaling */
-    .agency-title {
-        font-size: 3.5rem;
-    }
-
     .display-1 {
-        font-size: 3rem;
+        font-size: clamp(2.5rem, 8vw, 4.5rem);
     }
 
     .display-2 {
-        font-size: 2.5rem;
+        font-size: clamp(2rem, 6vw, 3.5rem);
+    }
+
+    .display-3 {
+        font-size: clamp(1.8rem, 5vw, 3rem);
+    }
+
+    .display-4 {
+        font-size: clamp(1.5rem, 4vw, 2.5rem);
     }
 
     /* Marquee */
     .agency-marquee {
-        font-size: 4rem;
-        padding: 50px 0;
+        font-size: clamp(2.5rem, 12vw, 5rem);
+        padding: 40px 0;
     }
 
     /* Timeline Mobile Stack */
@@ -524,12 +532,25 @@ h4 {
 
     /* Cards */
     .project-card {
-        height: 400px;
-        margin-bottom: 2rem;
+        height: 60vh;
+        min-height: 400px;
+        margin-bottom: 3rem;
+        border-radius: 30px;
     }
 
     .project-info {
-        padding: 2rem;
+        padding: 2.5rem 1.5rem;
+    }
+
+    .project-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 1rem;
+    }
+
+    .process-step {
+        flex-direction: column;
+        gap: 1.5rem;
     }
 
     /* Section Padding */
@@ -537,26 +558,91 @@ h4 {
         padding: 80px 0;
     }
 
+    /* Reduce horizontal padding on mobile */
+    .px-5 {
+        padding-left: 1.5rem !important;
+        padding-right: 1.5rem !important;
+    }
+
     .hero-agency {
-        padding-top: 150px;
+        padding-top: 120px;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero-agency p {
+        margin-left: auto;
+        margin-right: auto;
     }
 
     /* Contact Form */
     .border-start {
         border-left: 0 !important;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
-        padding-top: 2rem;
+        padding-top: 3rem;
+        margin-top: 3rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .project-card {
+        height: 400px;
+    }
+
+    .timeline-step h3 {
+        font-size: 1.5rem;
+    }
+
+    .loader-percent {
+        font-size: 5rem;
     }
 }
 
 @media (max-width: 576px) {
     .agency-title {
-        font-size: 2.5rem;
+        font-size: clamp(2rem, 12vw, 3.5rem);
     }
 
     .btn-agency {
         padding: 1rem 2rem;
-        font-size: 0.9rem;
+        font-size: 0.85rem;
+        width: 100%;
+        text-align: center;
+    }
+
+    .project-card {
+        height: 350px;
+    }
+
+    .project-info h3 {
+        font-size: 1.8rem;
+    }
+
+    .footer-links {
+        text-align: center;
+        margin-top: 2rem;
+    }
+}
+
+/* Touch Device Adjustments */
+@media (hover: none) {
+
+    .custom-cursor,
+    .cursor-follower {
+        display: none !important;
+    }
+
+    * {
+        cursor: auto !important;
+    }
+
+    .project-card:hover .project-img {
+        transform: none;
+    }
+
+    .process-step:hover {
+        padding-left: 0;
+        background: transparent;
     }
 }
 
